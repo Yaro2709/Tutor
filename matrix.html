@@ -21,7 +21,7 @@
     <style>
         body {
             padding-top: 4.5rem;
-        }    
+        }  
         .icon-inner {
             font-size: 45px;
             margin-bottom: 5px;
@@ -44,7 +44,7 @@
         }
     </style> 
 </head>
-<body>   
+<body>     
     <nav class="navbar navbar-expand-md  fixed-top bg-dark navbar-dark">
         <div class="container-xl">
             <a class="navbar-brand" href="#">
@@ -74,9 +74,11 @@
             <div class="col-md-12">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Выражение XX</h5>
-                        <p class="card-text overflow-auto" style="max-width: 260px; max-height: 50px;">
-                            <module id="aX"></module> + <module id="bX"></module>
+                        <h5 class="card-title">Выражение X</h5>
+                        <p>
+                            <div>| <module id="aX11"></module> <module id="aX12"></module> <module id="aX13"></module> |</div>
+                            <div>| <module id="aX21"></module> <module id="aX22"></module> <module id="aX23"></module> |</div>
+                            <div>| <module id="aX31"></module> <module id="aX32"></module> <module id="aX33"></module> |</div>
                         </p>
                         <p>
                           <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#X" aria-expanded="false" aria-controls="X">
@@ -92,9 +94,11 @@
                 </div>
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Выражение XXX</h5>
-                        <p class="card-text overflow-auto" style="max-width: 260px; max-height: 50px;">
-                            <module id="aXX"></module> + <module id="bXX"></module>
+                        <h5 class="card-title">Выражение XX</h5>
+                        <p>
+                            <div>| <module id="aXX11"></module> <module id="aXX12"></module> <module id="aXX13"></module> |</div>
+                            <div>| <module id="aXX21"></module> <module id="aXX22"></module> <module id="aXX23"></module> |</div>
+                            <div>| <module id="aXX31"></module> <module id="aXX32"></module> <module id="aXX33"></module> |</div>
                         </p>
                         <p>
                           <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#XX" aria-expanded="false" aria-controls="XX">
@@ -104,24 +108,6 @@
                         <div class="collapse" id="XX">
                             <div class="card card-body">
                                 <result id="cXX"></result>
-                            </div>
-                        </div>     
-                    </div>
-                </div>
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Выражение XXXX</h5>
-                        <p class="card-text overflow-auto" style="max-width: 260px; max-height: 50px;">
-                            <module id="aXXX"></module> + <module id="bXXX"></module>
-                        </p>
-                        <p>
-                          <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#XXX" aria-expanded="false" aria-controls="XXX">
-                                Открыть ответ
-                          </button>
-                        </p>
-                        <div class="collapse" id="XXX">
-                            <div class="card card-body">
-                                <result id="cXXX"></result>
                             </div>
                         </div>     
                     </div>
@@ -145,29 +131,56 @@
       }
       return Math.floor(Math.random() * (max - min + 1)) + min
     }
-    aX = module(10,49);
-    bX = module(10,49);
-    cX = aX + bX;
+    aX11 = module(1,9);
+    aX12 = module(1,9);
+    aX13 = module(1,9);
+    aX21 = module(1,9);
+    aX22 = module(1,9);
+    aX23 = module(1,9);
+    aX31 = module(1,9);
+    aX32 = module(1,9);
+    aX33 = module(1,9);
+    cX = (aX11 * aX22 * aX33) + (aX12 * aX23 * aX31) + (aX21 * aX32 * aX13) - (aX13 * aX22 * aX31) - (aX21 * aX12 * aX33) - (aX32 * aX23 * aX11);
 
-    document.getElementById("aX").innerHTML = aX;
-    document.getElementById("bX").innerHTML = bX;
+    document.getElementById("aX11").innerHTML = aX11;
+    document.getElementById("aX12").innerHTML = aX12;
+    document.getElementById("aX13").innerHTML = aX13;
+    
+    document.getElementById("aX21").innerHTML = aX21;
+    document.getElementById("aX22").innerHTML = aX22;
+    document.getElementById("aX23").innerHTML = aX23;
+    
+    document.getElementById("aX31").innerHTML = aX31;
+    document.getElementById("aX32").innerHTML = aX32;
+    document.getElementById("aX33").innerHTML = aX33;
+    
     document.getElementById("cX").innerHTML = cX;
     
-    aXX = module(100,499);
-    bXX = module(100,499);
-    cXX = aXX + bXX;
+    aXX11 = module(10,99);
+    aXX12 = module(10,99);
+    aXX13 = module(10,99);
+    aXX21 = module(10,99);
+    aXX22 = module(10,99);
+    aXX23 = module(10,99);
+    aXX31 = module(10,99);
+    aXX32 = module(10,99);
+    aXX33 = module(10,99);
+    cXX = (aXX11 * aXX22 * aXX33) + (aXX12 * aXX23 * aXX31) + (aXX21 * aXX32 * aXX13) - (aXX13 * aXX22 * aXX31) - (aXX21 * aXX12 * aXX33) - (aXX32 * aXX23 * aXX11);
 
-    document.getElementById("aXX").innerHTML = aXX;
-    document.getElementById("bXX").innerHTML = bXX;
+    document.getElementById("aXX11").innerHTML = aXX11;
+    document.getElementById("aXX12").innerHTML = aXX12;
+    document.getElementById("aXX13").innerHTML = aXX13;
+    
+    document.getElementById("aXX21").innerHTML = aXX21;
+    document.getElementById("aXX22").innerHTML = aXX22;
+    document.getElementById("aXX23").innerHTML = aXX23;
+    
+    document.getElementById("aXX31").innerHTML = aXX31;
+    document.getElementById("aXX32").innerHTML = aXX32;
+    document.getElementById("aXX33").innerHTML = aXX33;
+    
     document.getElementById("cXX").innerHTML = cXX;
     
-    aXXX = module(1000,4999);
-    bXXX = module(1000,4999);
-    cXXX = aXXX + bXXX;
-
-    document.getElementById("aXXX").innerHTML = aXXX;
-    document.getElementById("bXXX").innerHTML = bXXX;
-    document.getElementById("cXXX").innerHTML = cXXX;
 </script>
 <!-- 
 <footer>
