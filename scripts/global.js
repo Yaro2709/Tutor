@@ -1,77 +1,76 @@
-var compile = function (functionObject) {
-    return function (it) {
-        return functionObject.toString().match(/\/\*([\s\S]*?)\*\//)[1].replace(/\$\{\w.+\}/g, function (variable) {
-            return it[variable];
-        });
+window.template = {
+ //заружает представление
+ TemplateGet:  function (TemplateUrl) {
+    // 1. Создаём новый объект XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    // 2. Конфигурируем его: GET-запрос на URL "TemplateUrl"
+    xhr.open('GET', TemplateUrl, false);
+    // 3. Отсылаем запрос
+    xhr.send();
+   if (xhr.status >= 200 && xhr.status < 400) {
+      // вернуть результат
+      return xhr.responseText;
+   } else {
+       // обработать ошибку
+       alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+       return "";
+   }
+},
+//класс функций для рендинга
+Render:{
+    //а в этом классе мы напишем все функции рендера
+    func:{
+        //рендит переменные
+        vars : function(html, vars){
+            //ищем все переменные в шаблоне
+            var $ = html.match(/{{var.(.*?)}}/g);
+            //проверяем нашли ли что то
+                        if (Array.isArray($)) {
+            //мы нашли переменные в шаблоне. Необходимо их все распарсить.
+                        $.forEach(function (item) {
+                //item содержит найденую строку {{var.VarName}} 
+                //по этому мы должны распарсить ету строку дабы получить только VarName
+                               item = item.replace("{{var.", "");
+                              item = item.replace("}}", "");
+                              //у нас есть имя переменной. Пора проверить передали ли мы такую
+                              //и обработать ошибки
+                              if (vars[item] === undefined){
+                //перенную не передали.
+                //пишем об ошибке в консоль и заменяем её значение в шаблоне на null
+                console.warn("Переменная "+item+" не найдена");
+                html = html.replace("{{var." + item + "}}", "null");
+                 } else {
+                    //переменную мы нашли. Вставим ка её в шаблон
+                    html = html.replace("{{var." + item + "}}", vars[item]);
+                }
+                    });
+                }
+                //удалим обьект с переменными
+                delete vars;
+                //вернём html
+                return html;
+            }
+        },
+        //точка входа в рендер.
+        Run:function(html, vars){
+            html = this.func.vars(html, vars);
+            return html;
+        }
+    },
+    //точка входа
+    Run: function (TemplateUrl, vars) {
+        //загружаем шаблон
+        var html = this.TemplateGet(TemplateUrl);
+        //отправляем шаблон рендеру
+        html = this.Render.Run(html, vars);
+        //удаляем обьект с переменными. Он нам больше не нужен, а может занимать много места
+        delete vars;
+        //результат шаблонизатор вставит в <div id="page"></div>
+        document.getElementById("page").innerHTML = html;
     }
 };
 
-var value = it;
-variable = variable.replace('${', '').replace('}', '');
-variable.split('.').forEach(function (section) {
-    value = value[section];
-});
-return value;
-/*Генератор шаблона
-var compile = function (functionObject) {
-    return functionObject.toString().match(/\/\*([\s\S]*?)\*\//)[1];
-};
-*/
-/*Метод замены
-.replace(/\$\{\w.+\}/g, function (variable) {
-    return otherValue;
-});
-*/
-/*Устраняет проблемы с переменными вида <h2>${data.title}</h2>
-var value = it;
-variable = variable.replace('${', '').replace('}', '');
-variable.split('.').forEach(function (section) {
-    value = value[section];
-});
-return value;
-*/
-/*Тест шаблон
-var test3 = {
-    data: {
-        title: 'title string 3',
-        content: 'content string 3'
-    }
-};
-var toHtml3 = compile(function () {/*
- <div>
- <h2>${data.title}</h2>
- <div class="content">${data.content}</div>
- </div>
- *
-});
-toHtml3(test3);
-*/
-
-var navigationAt = {};
-var navigation = compile(function () {/*
-    <nav class="navbar navbar-expand-md  fixed-top bg-dark navbar-dark">
-        <div class="container-xl">
-            <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
-                Tutor
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarsExample07XL">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Сложение XX-XXXX</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index2.html">Сложение XXXXX-XXXXXXX</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./matrix.html">Матрицы X-XX</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> 
- */
+//вызовем представление
+template.Run("test.tpl", {
+    VarName : "test"
 });
