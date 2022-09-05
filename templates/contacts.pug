@@ -1,0 +1,27 @@
+doctype html
+html(lang="ru")
+    include ./templates/layout/head.pug  
+    body
+        include ./templates/layout/nav.pug
+    
+ 
+    
+        main.container(role="main")
+            div.row
+                div.col-md-12    
+                    div.card.mb-4.shadow-sm
+                        div.card-body
+                            h4.card-title Контакты
+                            div.row
+                                address.col-lg-6
+                                    strong Email
+                                    br
+                                    div tsvira.yaroslav@mail.ru
+                                address.col-lg-6
+                                    strong GitHub
+                                    br
+                                    div https://github.com/Yaro2709
+                                    
+    
+    
+    include ./templates/layout/footer.pug

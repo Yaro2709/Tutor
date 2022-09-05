@@ -1,0 +1,25 @@
+doctype html
+html(lang="ru")
+    include ./templates/layout/head.pug  
+    body
+        include ./templates/layout/nav.pug
+    
+ 
+    
+        main.container(role="main")
+            div.row
+                div.col-md-12    
+                    div.card.mb-4.shadow-sm
+                        div.card-body
+                            h4.card-title Добро пожаловать в Tutor!
+                            p.card-text.overflow-auto
+                                h5 Горячие темы
+                                ul
+                                    li
+                                        a(href="./tabularIntegrals.html") Табличные интегралы
+                                    li
+                                        a(href="./tabularTrigonometry.html") Табличные значения тригонометрических углов
+    
+    
+    
+    include ./templates/layout/footer.pug

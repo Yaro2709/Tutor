@@ -35,7 +35,7 @@ VarA = module(2,50);
             answer  = "$$\\displaylines{\\sin ("+VarU+") + C}$$";
         break;
         case 7:
-            task    = "$$\\displaylines{\\int \\frac{d"+VarU+"}{\\cos^2("+VarU+")} + C}$$";
+            task    = "$$\\displaylines{\\int \\frac{d"+VarU+"}{\\cos^2("+VarU+")}}$$";
             answer  = "$$\\displaylines{\\mathrm{tg} ("+VarU+") + C}$$";
         break;
         case 8:

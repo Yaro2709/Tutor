@@ -1,0 +1,46 @@
+{
+  "short_name": "Tutor",
+  "name": "Tutor",
+  "description": "Tutor",
+  "author": "Yaro2709",
+  "categories": ["game"],
+  "icons": [
+    {
+      "src": "/img/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#010e16",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#010e16",
+  "prefer_related_applications": false,
+  "serviceworker": {
+	  "src": "/manifest.js",
+	  "type": "",
+	  "update_via_cache": "none"
+    },
+  "shortcuts": [
+    {
+      "name": "Tutor",
+      "short_name": "Tutor",
+      "description": "Tutor",
+      "url": "/index.html",
+      "icons": [{ "src": "/img/192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Tutor",
+      "short_name": "Tutor",
+      "description": "Tutor",
+      "url": "/index.html",
+      "icons": [{ "src": "/img/512.png", "sizes": "512x512" }]
+    }
+  ]
+}
