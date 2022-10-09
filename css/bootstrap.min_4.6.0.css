@@ -209,3 +209,18 @@ body {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
+
+pre[class*=language-] {
+    border-radius: 0em;
+    border: 0.3em solid #545454;
+    box-shadow: 1px 1px 0.5em #000 inset;
+    margin: 0.5em 0;
+    overflow: auto;
+    padding: 1em;
+    border: 1px solid rgba(43,211,237, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to right, rgba(43,211,237,1.0),rgba(43,211,237,1.0) 100%) no-repeat border-box, linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5) 100%) no-repeat border-box;
+    background-position: top 1px left 0px, top 0px left 0px, top 0px right 0px, top 1px right 0px, bottom 1px left 0px, bottom 0px left 0px, bottom 0px right 0px, bottom 1px right 0px, top 0px left 0px;
+    background-size: 1px 3px, 4px 1px, 4px 1px, 1px 3px, 1px 3px, 4px 1px, 4px 1px, 1px 3px, 100% 100%;
+}

@@ -1,7 +1,7 @@
 //Флаг шаблона
 flag = module(1,20);
 //Генератор u
-var ArrayU  = ['a', 'b', 'c', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var ArrayU  = ['a', 'b', 'c', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var rand    = Math.floor(Math.random() * ArrayU.length); //Получаем случайный ключ массива
 var VarU       = ArrayU[rand];
 //Генератор a
