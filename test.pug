@@ -18,12 +18,14 @@ html(lang="ru")
                                 button.btn.btn-success(type="button", data-toggle="collapse", data-target="#tabularIntegralsAnswer", aria-expanded="false", aria-controls="#tabularIntegralsAnswer") Ответ
                             div.collapse(id="tabularIntegralsAnswer")
                                 div.card.card-body
+                                    div.boxTikZ
+                                        script(type="text/tikz", id="img")
                                     result(id="answer")
                                     pre
                                         code.language-cpp.
                                             p{ color: red } 
                                             class{top: 1px}
-        script(type="text/javascript", src="scripts/BD/tabularIntegrals.js")
+        script(type="text/javascript", src="scripts/BD/test.js")
     
     
     
