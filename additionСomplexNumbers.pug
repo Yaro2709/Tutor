@@ -1,0 +1,26 @@
+doctype html
+html(lang="ru")
+    include ./templates/layout/head.pug  
+    body
+        include ./templates/layout/nav.pug
+    
+ 
+    
+        main.container(role="main")
+            div.row
+                div.col-md-12    
+                    div.card.mb-4.shadow-sm
+                        div.card-body
+                            h5.card-title Сложение комплексных чисел
+                            p.card-text.overflow-auto
+                                module(id="task")
+                            p
+                                button.btn.btn-success(type="button", data-toggle="collapse", data-target="#additionСomplexNumbers", aria-expanded="false", aria-controls="#additionСomplexNumbers") Ответ
+                            div.collapse(id="additionСomplexNumbers")
+                                div.card.card-body
+                                    result(id="answer")
+        script(type="text/javascript", src="scripts/BD/additionСomplexNumbers.js")
+    
+    
+    
+    include ./templates/layout/footer.pug
