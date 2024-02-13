@@ -1,57 +1,73 @@
 //Флаг шаблона
-flag = module(1,12);
+flag = module(1,16);
 //Шаблоны
     switch (flag) {
         //Основные формулы
         //cosx
         case 1:
-            task    = "$$\\cos (\\pi-x)$$";
-            answer  = "$$- \\cos (x)$$";
+            task    = String.raw`\begin{gather*} \cos (\frac{\pi}{2}-x)  \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \sin (x)  \end{gather*}`;
         break;
         case 2:
-            task    = "$$\\cos (\\pi+x)$$";
-            answer  = "$$- \\cos (x)$$";
+            task    = String.raw`\begin{gather*} \cos (\frac{\pi}{2}+x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} -\sin (x) \end{gather*}`;
         break;
-        case 3:
-            task    = "$$\\cos (\\frac{\\pi}{2}-x)$$";
-            answer  = "$$\\sin (x)$$";
+		case 3:
+            task    = String.raw`\begin{gather*} \cos (\pi-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\cos (x) \end{gather*}`;
         break;
         case 4:
-            task    = "$$\\cos (\\frac{\\pi}{2}+x)$$";
-            answer  = "$$-\\sin (x)$$";
+            task    = String.raw`\begin{gather*} \cos (\pi+x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\cos (x) \end{gather*}`;
         break;
         case 5:
-            task    = "$$\\cos (\\frac{3\\pi}{2}-x)$$";
-            answer  = "$$-\\sin (x)$$";
+            task    = String.raw`\begin{gather*} \cos (\frac{3\pi}{2}-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\sin (x) \end{gather*}`;
         break;
         case 6:
-            task    = "$$\\cos (\\frac{\\pi}{2}+x)$$";
-            answer  = "$$\\sin (x)$$";
+            task    = String.raw`\begin{gather*} \cos (\frac{3\pi}{2}+x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \sin (x) \end{gather*}`;
         break;
-        //sinx
-        case 7:
-            task    = "$$\\sin (\\pi-x)$$";
-            answer  = "$$\\sin (x)$$";
+		case 7:
+            task    = String.raw`\begin{gather*} \cos (2\pi-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \cos (x) \end{gather*}`;
         break;
         case 8:
-            task    = "$$\\sin (\\pi+x) $$";
-            answer  = "$$-\\sin (x)$$";
+            task    = String.raw`\begin{gather*} \cos (2\pi+x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \cos (x) \end{gather*}`;
         break;
+        //sinx
         case 9:
-            task    = "$$\\sin (\\frac{\\pi}{2}-x)$$";
-            answer  = "$$\\cos (x)$$";
+            task    = String.raw`\begin{gather*} \sin (\frac{\pi}{2}-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \cos (x) \end{gather*}`;
         break;
         case 10:
-            task    = "$$\\sin (\\frac{\\pi}{2}+x)$$";
-            answer  = "$$\\cos (x)$$";
+            task    = String.raw`\begin{gather*} \sin (\frac{\pi}{2}+x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \cos (x) \end{gather*}`;
         break;
-        case 11:
-            task    = "$$\\sin (\\frac{3\\pi}{2}-x)$$";
-            answer  = "$$-\\cos (x)$$";
+		case 11:
+            task    = String.raw`\begin{gather*} \sin (\pi-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \sin (x) \end{gather*}`;
         break;
         case 12:
-            task    = "$$\\sin (\\frac{3\\pi}{2}-x)$$";
-            answer  = "$$-\\cos (x)$$";
+            task    = String.raw`\begin{gather*} \sin (\pi+x)  \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\sin (x) \end{gather*}`;
+        break;
+        case 13:
+            task    = String.raw`\begin{gather*} \sin (\frac{3\pi}{2}-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\cos (x) \end{gather*}`;
+        break;
+        case 14:
+            task    = String.raw`\begin{gather*} \sin (\frac{3\pi}{2}-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\cos (x) \end{gather*}`;
+        break;
+		case 15:
+            task    = String.raw`\begin{gather*} \sin (2\pi-x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*}-\\sin (x) \end{gather*}`;
+        break;
+        case 16:
+            task    = String.raw`\begin{gather*} \sin (2\pi+x) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} \sin (x) \end{gather*}`;
         break;
         //Дополнительные формулы
         default:
