@@ -1,0 +1,29 @@
+doctype html
+html(lang="ru")
+    include ./templates/layout/head.pug  
+    body
+        include ./templates/layout/nav.pug
+    
+ 
+    
+        main.container(role="main")
+            div.row
+                div.col-md-12    
+                    div.card.mb-4.shadow-sm
+                        div.card-body
+                            h5.card-title Преобразования двухмерного пространства с помощью матрицы 2x2
+                            p.card-text.overflow-auto
+                                module(id="task")
+                            p
+                                button.btn.btn-success(type="button", data-toggle="collapse", data-target="#transforming2DVectorUsing2x2Matrix", aria-expanded="false", aria-controls="#transforming2DVectorUsing2x2Matrix") Ответ
+                            div.collapse(id="transforming2DVectorUsing2x2Matrix")
+                                div.card.card-body
+                                    div.boxTikZ
+                                        script(type="text/tikz", id="img")
+                                    result(id="answer")
+
+        script(type="text/javascript", src="scripts/BD/transforming2DVectorUsing2x2Matrix.js")
+    
+    
+    
+    include ./templates/layout/footer.pug
