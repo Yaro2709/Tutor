@@ -1,0 +1,28 @@
+doctype html
+html(lang="ru")
+    include ./templates/layout/head.pug  
+    body
+        include ./templates/layout/nav.pug
+    
+ 
+    
+        main.container(role="main")
+            div.row
+                div.col-md-12    
+                    div.card.mb-4.shadow-sm
+                        div.card-body
+                            h5.card-title Произведение комплексных чисел
+                            p.card-text.overflow-auto
+                                module(id="task")
+                            p
+                                button.btn.btn-success(type="button", data-toggle="collapse", data-target="#multiplicationСomplexNumbers2DSpace", aria-expanded="false", aria-controls="#multiplicationСomplexNumbers2DSpace") Ответ
+                            div.collapse(id="multiplicationСomplexNumbers2DSpace")
+                                div.card.card-body
+                                    div.boxTikZ
+                                        script(type="text/tikz", id="img")
+                                    result(id="answer")
+        script(type="text/javascript", src="scripts/BD/multiplicationСomplexNumbers2DSpace.js")
+    
+    
+    
+    include ./templates/layout/footer.pug
