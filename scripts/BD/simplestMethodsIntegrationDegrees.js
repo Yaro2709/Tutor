@@ -1,10 +1,121 @@
 //Работа со степенями
 //Флаг шаблона
-flag = module(9,9);
+flag = module(1,3);
+//Генератор u
+var ArrayU  	= ['a', 'b', 'c', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var rand    	= Math.floor(Math.random() * ArrayU.length); //Получаем случайный ключ массива
+var VarU       	= ArrayU[rand];
 //Шаблоны
     switch (flag) {
+		//работа с диффернциалом в интеграле
+		case 1: //1260, 1293, 1308
+			//Генератор коэфициентов полиномов
+			P1 = module(1,20);
+			P2 = module(2,20);
+			P3 = module(2,20);
+			P4 = module(2,20);
+			//Генерация полиномов
+			var ArrayP  	= [
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P4+''+VarU+'^4 + '+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P1+''+VarU+'', 
+								''+P4+''+VarU+'^4 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'',
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2'
+							];
+			var rand    	= Math.floor(Math.random() * ArrayP.length); //Получаем случайный ключ массива
+			var VarP       	= ArrayP[rand];
+			//Генератор функций =
+			var ArrayF  	= ['\\sin{('+VarP+')}', '\\cos{('+VarP+')}', '\\mathrm{tg}{('+VarP+')}', '\\mathrm{ctg}{('+VarP+')}', '\\mathrm{arcsin}{('+VarP+')}', '\\mathrm{arctg}{('+VarP+')}', '\\mathrm{ln}{('+VarP+')}', 'e^{('+VarP+')}'];
+			var rand    	= Math.floor(Math.random() * ArrayF.length); //Получаем случайный ключ массива
+			var VarF       	= ArrayF[rand];
+			
+            task    = String.raw`\begin{gather*} \int ${VarF} d(${VarF}) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int ${VarF} d(${VarF})
+									=\frac{(${VarF})^2}{2}+C
+								\end{gather*}`;
+        break;
+		case 2: //1261
+			//Генератор коэфициентов полиномов
+			P1 = module(1,20);
+			P2 = module(2,20);
+			P3 = module(2,20);
+			P4 = module(2,20);
+			//Генерация полиномов
+			var ArrayP  	= [
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P4+''+VarU+'^4 + '+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P1+''+VarU+'', 
+								''+P4+''+VarU+'^4 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'',
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2'
+							];
+			var rand    	= Math.floor(Math.random() * ArrayP.length); //Получаем случайный ключ массива
+			var VarP       	= ArrayP[rand];
+			//Генератор функций =
+			var ArrayF  	= ['\\sin{('+VarP+')}', '\\cos{('+VarP+')}', '\\mathrm{tg}{('+VarP+')}', '\\mathrm{ctg}{('+VarP+')}', '\\mathrm{arcsin}{('+VarP+')}', '\\mathrm{arctg}{('+VarP+')}', '\\mathrm{ln}{('+VarP+')}', 'e^{('+VarP+')}'];
+			var rand    	= Math.floor(Math.random() * ArrayF.length); //Получаем случайный ключ массива
+			var VarF       	= ArrayF[rand];
+			//Степень
+			S1 = module(2,20);
+			S2 = S1 + 1;
+			
+            task    = String.raw`\begin{gather*} \int ${VarF}^{${S1}} d(${VarF}) \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int ${VarF}^{${S1}} d(${VarF})
+									=\frac{(${VarF})^{${S2}}}{${S2}}+C
+								\end{gather*}`;
+        break;		
+		case 3: //1292, 1293
+			//Генератор коэфициентов полиномов
+			P1 = module(1,20);
+			P2 = module(2,20);
+			P3 = module(2,20);
+			P4 = module(2,20);
+			//Генерация полиномов
+			var ArrayP  	= [
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P1+''+VarU+'', 
+								''+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P4+''+VarU+'^4 + '+P3+''+VarU+'^3 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'', 
+								''+P3+''+VarU+'^3 + '+P1+''+VarU+'', 
+								''+P4+''+VarU+'^4 + '+P2+''+VarU+'^2 + '+P1+''+VarU+'',
+								''+P3+''+VarU+'^3 + '+P2+''+VarU+'^2'
+							];
+			var rand    	= Math.floor(Math.random() * ArrayP.length); //Получаем случайный ключ массива
+			var VarP       	= ArrayP[rand];
+			//Генератор функций =
+			var ArrayF  	= ['\\sin{('+VarP+')}', '\\cos{('+VarP+')}', '\\mathrm{tg}{('+VarP+')}', '\\mathrm{ctg}{('+VarP+')}', '\\mathrm{arcsin}{('+VarP+')}', '\\mathrm{arctg}{('+VarP+')}', '\\mathrm{ln}{('+VarP+')}', 'e^{('+VarP+')}'];
+			var rand    	= Math.floor(Math.random() * ArrayF.length); //Получаем случайный ключ массива
+			var VarF       	= ArrayF[rand];
+			
+            task    = String.raw`\begin{gather*} \int\frac{d\left(${VarF}\right)}{${VarF}} \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 									
+									\int\frac{d\left(${VarF}\right)}{${VarF}}
+									=\ln\left|${VarF}\right|+C
+								\end{gather*}`;
+        break;
+		/*
         //Основные формулы
-		/*работа со степенью*/
+		//работа со степенью
         case 1: //1233
             task    = String.raw`\begin{gather*} \int\sqrt{x}dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -34,7 +145,7 @@ flag = module(9,9);
 									=\frac{(ae)^x}{\ln{a}+1}+C
 								\end{gather*}`;
         break;
-		/*степень + вынос константы*/
+		//степень + вынос константы
         case 4: //1238
             task    = String.raw`\begin{gather*} \int\frac{dx}{2\sqrt{x}} \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -75,7 +186,7 @@ flag = module(9,9);
 									=\frac{1}{\sqrt{3}}\cdot\arcsin{x}+C
 								\end{gather*}`;
         break;
-		/*сумма интегралов - интеграл суммы*/
+		//сумма интегралов - интеграл суммы
 		case 7: //1241
             task    = String.raw`\begin{gather*} \int(1-2u)du \end{gather*}`;
             answer  = String.raw`\begin{gather*}
@@ -94,7 +205,7 @@ flag = module(9,9);
 									=-10x^{-0{,}2}+15x^{0{,}2}-\frac{250x^{1{,}38}}{69}+C
 								\end{gather*}`;
         break;
-		/*раскрытие скобок*/
+		//раскрытие скобок
         case 8: //1242
             task    = String.raw`\begin{gather*} \int\left(\sqrt{x}+1\right)\left(x-\sqrt{x}+1\right)dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -110,7 +221,7 @@ flag = module(9,9);
 								\end{gather*}`;
         break;
 		
-		/*деление каждого члена на значение дроби*/
+		//деление каждого члена на значение дроби
 		case 9: //1243
             task    = String.raw`\begin{gather*} \int\frac{\sqrt{x}-x^3e^x+x^2}{x^3}dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -142,7 +253,7 @@ flag = module(9,9);
 									=3x-\frac{3^x}{2^{x-1}\ln\frac{3}{2}}+C									
 								\end{gather*}`;
         break;
-		/*деление каждого члена на значение дроби + фомрула сокращенного умножения*/
+		//деление каждого члена на значение дроби + фомрула сокращенного умножения
 		case 0: //1245
             task    = String.raw`\begin{gather*} \int\left(\frac{1-z}{z}\right)^2dz \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -179,7 +290,7 @@ flag = module(9,9);
 									=\frac{3\sqrt[3]{x^2}}{2}+\frac{18x\sqrt[6]{x}}{7}+\frac{9x\sqrt[3]{x^2}}{5}+\frac{6x^2\sqrt[6]{x}}{13}+C
 								\end{gather*}`;
         break;
-		/*разделение числителя + деление каждого члена на значение дроби*/
+		//разделение числителя + деление каждого члена на значение дроби
 		case 0: //1256
             task    = String.raw`\begin{gather*} \int\frac{1+2x^2}{x^2\left(1+x^2\right)}dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -192,7 +303,7 @@ flag = module(9,9);
 									=-\frac{1}{x}+\arctg{x}+C						
 								\end{gather*}`;
         break;
-		/*разделение числителя + деление каждого члена на значение дроби + формулы сокращенного умножения*/
+		//разделение числителя + деление каждого члена на значение дроби + формулы сокращенного умножения
 		case 0: //1257
             task    = String.raw`\begin{gather*} \int\frac{(1+x)^2}{x\left(1+x^2\right)}dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -204,36 +315,7 @@ flag = module(9,9);
 									=\ln|x|+2\arctg{x}+C
 								\end{gather*}`;
         break;
-		/*работа с диффернциалом в интеграле*/
-		case 0: //1260
-            task    = String.raw`\begin{gather*} \int\sin{x}d(\sin{x}) \end{gather*}`;
-            answer  = String.raw`\begin{gather*} 
-									\int\sin{x}d(\sin{x})
-									=\frac{\sin^2x}{2}+C
-								\end{gather*}`;
-        break;
-		case 0: //1261
-            task    = String.raw`\begin{gather*} \int\tg^3{x}d(\tg{x}) \end{gather*}`;
-            answer  = String.raw`\begin{gather*} 
-									\int\tg^3{x}d(\tg{x})
-									=\frac{\tg^4x}{4}+C
-								\end{gather*}`;
-        break;
-		case 0: //1292
-            task    = String.raw`\begin{gather*} \int\frac{d\left(1+x^2\right)}{1+x^2} \end{gather*}`;
-            answer  = String.raw`\begin{gather*} 
-									\int\frac{d\left(1+x^2\right)}{1+x^2}
-									=\ln\left(1+x^2\right)+C
-								\end{gather*}`;
-        break;
-		case 0: //1293
-            task    = String.raw`\begin{gather*} \int\frac{d\left(\arcsin{x}\right)}{\arcsin{x}} \end{gather*}`;
-            answer  = String.raw`\begin{gather*} 
-									\int\frac{d\left(\arcsin{x}\right)}{\arcsin{x}}
-									=\ln\left|\arcsin{x}\right|+C
-								\end{gather*}`;
-        break;
-		/*работа с диффернциалом в интеграле + степень*/
+		//работа с диффернциалом в интеграле + степень
 		case 0: //1262
             task    = String.raw`\begin{gather*} \int\frac{d\left(1+x^2\right)}{\sqrt{1+x^2}} \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -257,7 +339,14 @@ flag = module(9,9);
 									=\tg(1+\ln{x})+C
 								\end{gather*}`;
         break;
-		/*занесение под диффернциал + степень*/
+		case 0: //1315
+            task    = String.raw`\begin{gather*} \int\frac{d\left(\frac{x}{3}\right)}{\sqrt{1-\left(\frac{x}{3}\right)^2}} \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\frac{d\left(\frac{x}{3}\right)}{\sqrt{1-\left(\frac{x}{3}\right)^2}}
+									=\arcsin\frac{x}{3}+C
+								\end{gather*}`;
+        break;
+		//занесение под диффернциал + степень
 		case 0: //1263
             task    = String.raw`\begin{gather*} \int(x+1)^{15}dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -575,7 +664,25 @@ flag = module(9,9);
 									=\frac{\ln\left(e^{2x}+a^2\right)}{2}+C
 								\end{gather*}`;
         break;
-		/*занесение под диффернциал + константа*/
+		case 0: //1313
+            task    = String.raw`\begin{gather*} \int{e^{x^2}}xdx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int{e^{x^2}}xdx
+									=\left[\begin{aligned}& d\left(x^2\right)=2xdx;\\& xdx=\frac{1}{2}d\left(x^2\right).\end{aligned}\right]
+									=\frac{1}{2}\int{e^{x^2}}d\left(x^2\right)
+									=\frac{e^{x^2}}{2}+C
+								\end{gather*}`;
+        break;
+		case 0: //1314
+            task    = String.raw`\begin{gather*} \int{e^{-x^3}}x^2dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int{e^{-x^3}}x^2dx
+									=\left[\begin{aligned}& d\left(-x^3\right)=-3x^2dx;\\& x^2dx=-\frac{1}{3}d\left(-x^3\right).\end{aligned}\right]
+									=-\frac{1}{3}\int{e^{-x^3}}d\left(-x^3\right)
+									=-\frac{e^{-x^3}}{3}+C
+								\end{gather*}`;
+        break;
+		//занесение под диффернциал + константа
 		case 0: //1287
             task    = String.raw`\begin{gather*} \int(\cos\alpha-\cos{2x})dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -584,7 +691,82 @@ flag = module(9,9);
 									=\cos\alpha\cdot{x}-\frac{\sin{2x}}{2}+C
 								\end{gather*}`;
         break;
-		/*использование тригонометрических тождеств - может использовать другие методы при решение*/
+		//занесение под диффернциал
+		case 0: //1309
+            task    = String.raw`\begin{gather*} \int{e^{\sin{x}}}\cos{x}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int{e^{\sin{x}}}\cos{x}dx
+									=\biggl[d(\sin{x})=\cos{x}dx\biggr]
+									=\int{e^{\sin{x}}}d(\sin{x})
+									=e^{\sin{x}}+C
+								\end{gather*}`;
+        break;
+		case 0: //1310
+            task    = String.raw`\begin{gather*} \int{a^{3x}}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int{a^{3x}}dx
+									=\left[\begin{aligned}&d(3x)=3dx;\\&dx=\frac{1}{3}d(3x).\end{aligned}\right]
+									=\frac{1}{3}\cdot\int{a^{3x}}d(3x)
+									=\frac{a^{3x}}{3\ln{a}}+C
+								\end{gather*}`;
+        break;
+		case 0: //1311
+            task    = String.raw`\begin{gather*} \int{a^{-x}}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int{a^{-x}}dx
+									=\left[\begin{aligned}&d(-x)=-dx;\\&dx=-d(-x).\end{aligned}\right]
+									=-\int{a^{-x}}d(-x)
+									=-\frac{a^{-x}}{\ln{a}}+C
+								\end{gather*}`;
+        break;
+		case 0: //1312
+            task    = String.raw`\begin{gather*} \int{e^{-3x+1}}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int{e^{-3x+1}}dx
+									=\left[\begin{aligned}& d(-3x+1)=-3dx;\\& dx=-\frac{1}{3}d(-3x+1).\end{aligned}\right]
+									=-\frac{1}{3}\int{e^{-3x+1}}d(-3x+1)
+									=-\frac{e^{-3x+1}}{3}+C
+								\end{gather*}`;
+        break;
+		case 0: //1316
+            task    = String.raw`\begin{gather*} \int\frac{dx}{\sqrt{1-25x^2}} \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\frac{dx}{\sqrt{1-25x^2}}
+									=\int\frac{dx}{\sqrt{1-(5x)^2}}
+									=\left[\begin{aligned}& d(5x)=5dx;\\& dx=\frac{1}{5}d(5x).\end{aligned}\right]
+									=\frac{1}{5}\int\frac{d(5x)}{\sqrt{1-(5x)^2}}
+									=\frac{\arcsin{5x}}{5}+C
+								\end{gather*}`;
+        break;
+		case 0: //1317
+            task    = String.raw`\begin{gather*} \int\frac{dx}{1+9x^2} \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\frac{dx}{1+9x^2}
+									=\int\frac{dx}{1+(3x)^2}
+									=\left[\begin{aligned}& d(3x)=3dx;\\& dx=\frac{1}{3}d(3x).\end{aligned}\right]
+									=\frac{1}{3}\int\frac{d(3x)}{1+(3x)^2}
+									=\frac{\arctg{3x}}{3}+C
+								\end{gather*}`;
+        break;
+		case 0: //1318
+            task    = String.raw`\begin{gather*} \int\frac{dx}{\sqrt{4-x^2}} \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\frac{dx}{\sqrt{4-x^2}}
+									=\int\frac{dx}{\sqrt{2^2-x^2}}
+									=\arcsin\frac{x}{2}+C
+								\end{gather*}`;
+        break;
+		case 0: //1319
+            task    = String.raw`\begin{gather*} \int\frac{dx}{2x^2+9} \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\frac{dx}{2x^2+9}
+									=\frac{1}{2}\int\frac{dx}{x^2+\frac{9}{2}}
+									=\frac{1}{2}\int\frac{dx}{x^2+\left(\frac{3}{\sqrt{2}}\right)^2}
+									=\frac{1}{2}\cdot\frac{1}{\frac{3}{\sqrt{2}}}\cdot\arctg\frac{x}{\frac{3}{\sqrt{2}}}+C
+									=\frac{\arctg\frac{\sqrt{2}x}{3}}{3\sqrt{2}}+C
+								\end{gather*}`;
+        break;
+		//использование тригонометрических тождеств - может использовать другие методы при решение
 		case 0: //1251
             task    = String.raw`\begin{gather*} \int\frac{1+\cos^2{x}}{1+\cos{2x}}dx \end{gather*}`;
             answer  = String.raw`\begin{gather*} 
@@ -654,6 +836,57 @@ flag = module(9,9);
 									=\frac{\pi}{2}x+C
 								\end{gather*}`;
         break;
+		case 0: //1301 
+            task    = String.raw`\begin{gather*} \int\tg{x}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\tg{x}dx
+									=\int\frac{\sin{x}}{\cos{x}}dx
+									=\left[\begin{aligned}&d(\cos{x})=-\sin{x}dx;\\&\sin{x}dx=-d(\cos{x}).\end{aligned}\right]
+									=-\int\frac{d(\cos{x})}{\cos{x}}
+									=-\ln|\cos{x}|+C
+								\end{gather*}`;
+        break;
+		case 0: //1302 
+            task    = String.raw`\begin{gather*} \int\ctg{x}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\ctg{x}dx
+									=\int\frac{\cos{x}}{\sin{x}}dx
+									=\left[d(\sin{x})=\cos{x}dx\right]
+									=\int\frac{d(\sin{x})}{\sin{x}}
+									=\ln|\sin{x}|+C
+								\end{gather*}`;
+        break;
+		case 0: //1303
+            task    = String.raw`\begin{gather*} \int\tg{3x}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\tg{3x}dx
+									=\int\frac{\sin{3x}}{\cos{3x}}dx
+									=\left[\begin{aligned}& d(\cos{3x})=-3\sin{3x}dx;\\& \sin{3x}dx=-\frac{1}{3}d(\cos{3x}).\end{aligned}\right]
+									=-\frac{1}{3}\int\frac{d(\cos{3x})}{\cos{3x}}
+									=-\frac{\ln|\cos{3x}|}{3}+C
+								\end{gather*}`;
+        break;
+		case 0: //1304
+            task    = String.raw`\begin{gather*} \int\ctg(2x+1)dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\ctg(2x+1)dx
+									=\int\frac{\cos(2x+1)}{\sin(2x+1)}dx=\\
+
+									=\left[\begin{aligned}& d(\sin(2x+1))=2\cos(2x+1)dx;\\& \cos(2x+1)dx=\frac{1}{2}d(\sin(2x+1)).\end{aligned}\right]
+									=\frac{1}{2}\int\frac{d(\sin(2x+1))}{\sin(2x+1)}
+									=\frac{\ln|\sin(2x+1)|}{2}+C
+								\end{gather*}`;
+        break;
+		case 0: //1305
+            task    = String.raw`\begin{gather*} \int\frac{\sin{2x}}{1+\cos^2x}dx \end{gather*}`;
+            answer  = String.raw`\begin{gather*} 
+									\int\frac{\sin{2x}}{1+\cos^2x}dx
+									=\left[\begin{aligned}& d\left(1+\cos^2x\right)=-2\cos{x}\sin{x}dx=-\sin{2x}dx;\\& \sin{2x}dx=-d\left(1+\cos^2x\right).\end{aligned}\right]=\\
+
+									=-\int\frac{d\left(1+\cos^2x\right)}{1+\cos^2x}
+									=-\ln\left(1+\cos^2x\right)+C
+								\end{gather*}`;
+        break;
 		
 		
 		case 0:
@@ -662,6 +895,7 @@ flag = module(9,9);
 									
 								\end{gather*}`;
         break;
+		*/
         //Дополнительные формулы
         default:
             alert( "400 Bad Request: value is undefined!" );
